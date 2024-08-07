@@ -10,8 +10,7 @@
     <div class="container">
         <h1>Kalkulator Indeks Massa Tubuh </h1>
 
-        <!-- Option for providing height 
-            and weight to the user-->
+        <!--  Opsi untuk memberikan tinggi dan berat kepada pengguna-->
         <p>Tinggi (cm)</p>
 
         <input type="text" id="height">
@@ -31,26 +30,26 @@
     window.onload = () => {
         let button = document.querySelector("#btn");
 
-        // Function for calculating BMI
+        // Fungsi untuk menghitung BMI
         button.addEventListener("click", calculateBMI);
     };
 
     function calculateBMI() {
 
-        /* Getting input from user into height variable.
-        Input is string so typecasting is necessary. */
+        /* Mendapatkan input dari pengguna ke dalam variabel height.
+    Input adalah string jadi perlu konversi tipe. */
         let height = parseInt(document
             .querySelector("#height").value);
 
-        /* Getting input from user into weight variable. 
-        Input is string so typecasting is necessary.*/
+        /* Mendapatkan input dari pengguna ke dalam variabel weight.
+    Input adalah string jadi perlu konversi tipe. */
         let weight = parseInt(document
             .querySelector("#weight").value);
 
         let result = document.querySelector("#result");
 
-        // Checking the user providing a proper
-        // value or not
+        // Memeriksa apakah pengguna memberikan nilai yang benar atau tidak 
+
         if (height === "" || isNaN(height))
             result.innerHTML = "Provide a valid Height!";
 
@@ -60,11 +59,11 @@
         // If both input is valid, calculate the bmi
         else {
 
-            // Fixing upto 2 decimal places
+            // Membulatkan hingga 2 tempat desimal
             let bmi = (weight / ((height * height)
                 / 10000)).toFixed(2);
 
-            // Dividing as per the bmi conditions
+            // Membagi sesuai dengan kondisi bmi
             if (bmi < 18.5) result.innerHTML =
                 `Kekurangan Berat Badan : <span>${bmi}</span>`;
 
